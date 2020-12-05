@@ -115,3 +115,15 @@ class FundamentalData(av):
         """
         _FUNCTION_KEY = 'CASH_FLOW'
         return _FUNCTION_KEY, 'quarterlyReports', 'symbol'
+    
+    @av._output_format
+    @av._call_api_on_func
+    def get_earnings(self, symbol):
+        """
+        Returns the earnings
+
+        Keyword Arguments:
+            symbol:  the symbol for the equity we want to get its data
+        """
+        _FUNCTION_KEY = 'EARNINGS'
+        return _FUNCTION_KEY, 'symbol'
