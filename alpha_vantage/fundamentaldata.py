@@ -115,3 +115,27 @@ class FundamentalData(av):
         """
         _FUNCTION_KEY = 'CASH_FLOW'
         return _FUNCTION_KEY, 'quarterlyReports', 'symbol'
+
+    @av._output_format
+    @av._call_api_on_func
+    def get_earnings_annual(self, symbol):
+        """
+        Returns the annual earnings (EPS) for the company of interest. 
+
+        Keyword Arguments:
+            symbol:  the symbol for the equity we want to get its data
+        """
+        _FUNCTION_KEY = 'EARNINGS'
+        return _FUNCTION_KEY, 'annualEarnings', 'symbol'
+
+    @av._output_format
+    @av._call_api_on_func
+    def get_earnings_quarterly(self, symbol):
+        """
+        Returns the quarterly earnings (EPS) for the company of interest. Quarterly data also includes analyst estimates and surprise metrics. 
+
+        Keyword Arguments:
+            symbol:  the symbol for the equity we want to get its data
+        """
+        _FUNCTION_KEY = 'EARNINGS'
+        return _FUNCTION_KEY, 'quarterlyEarnings', 'symbol'
